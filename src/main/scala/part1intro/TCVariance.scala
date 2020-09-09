@@ -14,30 +14,37 @@ object TCVariance extends App {
   // variance
 
   class Animal
+
   class Cat extends Animal
 
   // covariant type: subtyping is propagated to the generic type
   class Cage[+T]
+
   val cage: Cage[Animal] = new Cage[Cat] // cat extends animal so Cage[Cat] <: Cage[Animal]
 
   // contravariant type: subtyping is propagated backwards to the generic type
 
   class Vet[-T]
+
   val vet: Vet[Cat] = new Vet[Animal] // Cat <: Animal then Vet[Animal] <: Vet[Cat]
 
   // if a generic type HAS a T that's covariant, ACTS on T is contravariant
   // covariance affects how TC instances are fetched
 
   trait SoundMaker[-T]
+
   implicit object AnimalSoundMaker extends SoundMaker[Animal]
+
   def makeSound[T](implicit soundMaker: SoundMaker[T]): Unit = println("wow")
+
   makeSound[Animal] // compiles
   makeSound[Cat] // ok TC instance for animal is also applicable to Cats
 
   // rule 1: contravariant TCs can use the superclass instance if
   // nothing is available for the given type
 
-  implicit  object OptionSuondMaker extends SoundMaker[Option[Int]]
+  implicit object OptionSoundMaker extends SoundMaker[Option[Int]]
+
   makeSound[Option[Int]]
   makeSound[Some[Int]]
 
