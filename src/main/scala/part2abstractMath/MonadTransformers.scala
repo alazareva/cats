@@ -6,8 +6,6 @@ import scala.concurrent.{ExecutionContext, Future}
 
 object MonadTransformers extends App {
 
-  def sumAppOptions(values: List[Option[Int]]): Int = ???
-
   import cats.data.OptionT
   import cats.instances.list._
 
