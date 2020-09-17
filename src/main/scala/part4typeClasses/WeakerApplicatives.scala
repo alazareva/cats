@@ -27,7 +27,7 @@ object WeakerApplicatives extends App {
 
   val applyOption = Apply[Option]
 
-  val funcApp = applyOption.ap(Some((x: Int) => x + 1))
+  //val funcApp = applyOption.ap(Some((x: Int) => x + 1))
 
   import cats.syntax.apply._ // extension methods
 
