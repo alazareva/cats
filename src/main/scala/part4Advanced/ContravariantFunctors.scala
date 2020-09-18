@@ -35,8 +35,6 @@ object ContravariantFunctors extends App {
   implicit def getOptionFormat[T](implicit f: Format[T], m: Monoid[T]): Format[Option[T]] =
     f.contramap[Option[T]](_.getOrElse(m.empty))
 
-  println(format(Option(Option(32))))
-
   /*
   IntFormat
   fo: Format[Option[Int]] = IntFormat.contramap[Option[Int]](_.get)
