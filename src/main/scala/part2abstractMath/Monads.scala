@@ -89,5 +89,4 @@ object Monads extends App {
     } yield (a, b)
 
   println(getPairsFor(numOption, charOption))
-
 }
