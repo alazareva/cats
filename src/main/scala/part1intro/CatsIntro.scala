@@ -35,5 +35,4 @@ object CatsIntro extends App {
 
   val compareTwoCars = ToyCar("a", 1.99) === ToyCar("a", 1.83)
 
-
 }

@@ -88,5 +88,4 @@ object CustomMonad extends App {
   val changedTree = TreeMonad.flatMap(tree)(v => Branch(Leaf(v + 1), Leaf(v - 1)))
   println(changedTree)
 
-
 }

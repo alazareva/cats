@@ -1,4 +1,4 @@
-package part4Advanced
+package part5advanced
 
 object Kleislis extends App {
 
@@ -34,4 +34,5 @@ object Kleislis extends App {
 
   // dependency injection same as Reader[Int, Int]
   println(composed(2)) // times2(2) + plus4(2) == 10
+
 }
